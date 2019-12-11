@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "json-server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -16,9 +17,17 @@
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
+    "@angular/http": "^7.2.15",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@swimlane/ngx-datatable": "^16.0.2",
+    "ag-grid-angular": "^22.1.0",
+    "ag-grid-community": "^22.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "json-server": "^0.15.1",
+    "mongoose": "^5.8.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

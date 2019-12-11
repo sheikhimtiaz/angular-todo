@@ -1,0 +1,16 @@
+<h2 class="header">Add Task</h2>
+
+<!-- <input type="text" id="newTask"> -->
+
+<input #newTask class="inputClass"
+      (keyup.enter)="addTask(newTask.value); newTask.value='' "
+      (blur)="addTask(newTask.value); newTask.value='' ">
+
+    <button (click)="addTask(newTask.value); newTask.value=''" class="buttonAdd">Add</button>
+
+<!-- <div class="row">
+    <button onclick="sendMessage()">ADD</button>
+</div> -->
+
+
+<!-- {{message}} -->

@@ -1,0 +1,15 @@
+<h2  class="header">Task List</h2>
+
+<!-- {{message}} -->
+
+  <div>
+        <ngx-datatable class="customeClass"
+          [rows]="mainObject.tasks"
+          [columns]="columns">
+   
+          <!-- <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+           <span>{{ value }}</span>
+          </ng-template> -->
+
+        </ngx-datatable>
+      </div>

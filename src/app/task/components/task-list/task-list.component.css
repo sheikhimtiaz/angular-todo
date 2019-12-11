@@ -1,0 +1,39 @@
+
+
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.datatable-header {
+    color: #EFF0F1;
+    background-color: #2D9A70;
+ }
+
+.datatable-body-row {
+    color: #EFF0F1;
+    background-color: #2D9A70;
+}
+
+.customeClass{
+    color: #5c5c5c;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+}
+
+.header{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 26px;
+    color: #2D9A70;
+}
+
+/* ::ng-deep .error{
+    background:red;
+} */
