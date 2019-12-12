@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'app/task/services/data.service';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
 import { v4 as uuid } from 'uuid';
+
+import { CommonService } from 'app/task/services/common.service';
+import { DataService } from 'app/task/services/data.service';
 
 @Component({
   selector: 'app-task-list',
@@ -30,10 +34,11 @@ export class TaskListComponent implements OnInit {
     {name:'Status'}
   ];
   
-
-  constructor(private data: DataService) { }
-
+  constructor(private commonService: CommonService, private data: DataService) { }
+  RepoData;
+  valbutton = "Save";
   ngOnInit() {
+    this.commonService.GetUser().subscribe(data => this.RepoData = data)
     this.data.currentMessage.subscribe(message =>{
       this.message = message;
       this.createNewTask(message);
@@ -63,6 +68,26 @@ export class TaskListComponent implements OnInit {
         localStorage.setItem('mainObject',JSON.stringify(this.mainObject));
     }
     this.mainObject=JSON.parse(localStorage.getItem("mainObject"));
+  }
+
+  onSave = function(user, isValid: boolean){
+    user.mode = this.valbutton;
+    this.commonService.SaveUser(user).subscribe(data=> {
+      alert(data.data);
+      this.ngOnInit;
+    }, error => this.errorMessage = error);
+  }
+  edit = function(kk){
+    this.id = kk._id;
+    this.name = kk.name;
+    this.address = kk.address;
+    this.valbutton = 'Update';
+  }
+  delete = function(id){
+    this.commonService.DeleteUser(id).subscribe(data=> {
+      alert(data.data);
+      this.ngOnInit();
+    }, error => this.errorMessage = error);
   }
 
 }

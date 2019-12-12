@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskModule } from './task/task.module';
 import { TaskListComponent } from './task/components/task-list/task-list.component';
+import { CommonService } from './task/services/common.service';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { TaskListComponent } from './task/components/task-list/task-list.compone
     AppRoutingModule,
     TaskModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 
